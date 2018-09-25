@@ -1,9 +1,6 @@
 $( document ).ready(function() {
 
     var searchOptions = ["horse", "dog", "squirrel", "parrot", "duck", "pig", "fish", "whale"];
-    var APIkey = "JKBLfP36MCmRu0GOW0fX0txrpxwZn9ue";
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key="+ APIkey + "&limit=10";
-    var search = "";
     var gifRating = "";
     var gifURL = "";
 
@@ -24,7 +21,9 @@ $( document ).ready(function() {
     
 
     function displayGifs () {
-        search = $(this).attr("data-name");
+        var search = $(this).attr("data-name");
+        var APIkey = "JKBLfP36MCmRu0GOW0fX0txrpxwZn9ue";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key="+ APIkey + "&limit=10";
         console.log(queryURL); // displays the constructed url
         $.ajax({
             url: queryURL,
@@ -32,6 +31,14 @@ $( document ).ready(function() {
         }) .done(function(response) {
             console.log(search);
             console.log(response);
+            $("#gifs").empty();
+            for (let j = 0; j < response.data.length; j++) {
+                gifURL = response.data[j].images.original.url
+                gifRating = response.data[j].rating
+                console.log(gifURL);
+                console.log(gifRating);
+                $("#gifs").append("<img src='" + gifURL + "'>")
+            }
         });
     };
 
