@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var searchOptions = ["The Office", "Arrested Development", "Brooklyn 99", "Parks and Recreation", "30 Rock", "Archer", "Bobs Burgers"];
+    var searchOptions = ["Silly", "Annoyed", "Angry", "Excited", "Shocked", "Proud", "Euphoric"];
     var gifRating = "";
     var gifAnimateURL = "";
     var gifStillURL = "";
@@ -9,17 +9,17 @@ $(document).ready(function () {
 
     // renders button from Search Options loop
     function renderButtons() {
-        $("#buttons").empty();
+       // $("#buttons").empty();
         for (var i = 0; i < searchOptions.length; i++) {
             var a = $("<button>");
             a.addClass("search-button");
             a.addClass("col");
             a.addClass("btn");
-            a.addClass("btn-outline-primary");
+            a.addClass("btn-primary");
             a.attr('id', searchOptions[i])
             a.attr("data-name", searchOptions[i]);
             a.text(searchOptions[i]);
-            $("#buttons").append(a);
+            $("#buttons").prepend(a);
         }
     };
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
     function displayGifs() {
         var search = $(this).attr("data-name");
         var APIkey = "JKBLfP36MCmRu0GOW0fX0txrpxwZn9ue";
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=" + APIkey + "&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=" + APIkey + "&limit=12";
         console.log(queryURL); // displays the constructed url
         $.ajax({
             url: queryURL,
@@ -37,17 +37,18 @@ $(document).ready(function () {
             console.log(response);
             $("#gifs").empty();
             for (let j = 0; j < response.data.length; j++) {
-                gifAnimateURL = response.data[j].images.original.url
+                gifAnimateURL = response.data[j].images.fixed_width.url
                 gifStillURL = response.data[j].images.original_still.url
                 gifRating = response.data[j].rating.toUpperCase()
                 var gifSlug = response.data[j].slug
                 //gifTitle = response.data[j].title
                 var gifDiv = $("<div>");
-                gifDiv.addClass("container");
+               // gifDiv.addClass("container");
                 gifDiv.addClass("gifImage");
                 gifRating = $("<p>").text("Rating: " + gifRating);
                 //gifTitle = $("<p>").text("Title: " + gifTitle);
                // gifDiv.append(gifTitle);
+                gifDiv.addClass("col-3")
                 gifDiv.append(gifRating);
                 // var downloadButtonA = $("<a>");
                 // downloadButtonA.attr("download");
