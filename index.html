@@ -11,24 +11,24 @@
 </head>
 
 <body>
-    <header>
+    <div class="header container-fluid">
         <h1>Get Yer Gifs Here</h1>
-    </header>
+    </div>
 
     <div class="container" id="main-content">
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="user-input">Add Your Favorite Show:</label>
-                    <input type="text" id="user-input">
+        <div class="row justify-content-center">Click on the buttons below to display random GIFs from the TV show listed, or add your favorite show!</div>
+        <div class="row" id="buttons"> </div>
+        <div class="row" id="userinputdiv">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="user-input">Add Your Favorite Show:</label>
+                        <input type="text" id="user-input">
+                    </div>
+                </div>
+                <div class="col-4">
+                    <input id="addGif" type="submit" value="Add Show" class="btn btn-block btn-primary">
                 </div>
             </div>
-            <div class="col-4">
-                <input id="addGif" type="submit" value="Add Show" class="btn btn-block btn-primary">
-            </div>
-        </div>
-        <div class="row" id="buttons"> </div>
-
         <div class="row" id="gifs"> </div>
     </div>
 

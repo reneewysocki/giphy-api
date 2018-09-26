@@ -5,11 +5,13 @@ body {
 #main-content {
     background-color: white;
     padding: 20px;
+    border-radius: 10px;
 }
 
 h1 {
     color: blue;
     text-align: center;
+    line-height: 75px;
 }
 
 .search-button {
@@ -20,6 +22,11 @@ h1 {
     width: 60%;
 } 
 
+.header {
+    height: 80px;
+    background-color: lightblue;
+    margin-bottom: 25px;
+}
 
 p {
     margin-bottom: 2px;
@@ -32,5 +39,9 @@ p {
 
 #gifs {
     text-align: center;
+}
+
+#userinputdiv {
+    margin-top: 20px;
 }
 

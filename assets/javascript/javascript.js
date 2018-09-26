@@ -5,7 +5,7 @@ $(document).ready(function () {
     var gifAnimateURL = "";
     var gifStillURL = "";
    // var gifTitle = "";
-
+    var downloadButton = "";
 
     // renders button from Search Options loop
     function renderButtons() {
@@ -40,6 +40,7 @@ $(document).ready(function () {
                 gifAnimateURL = response.data[j].images.original.url
                 gifStillURL = response.data[j].images.original_still.url
                 gifRating = response.data[j].rating.toUpperCase()
+                var gifSlug = response.data[j].slug
                 //gifTitle = response.data[j].title
                 var gifDiv = $("<div>");
                 gifDiv.addClass("container");
@@ -48,6 +49,21 @@ $(document).ready(function () {
                 //gifTitle = $("<p>").text("Title: " + gifTitle);
                // gifDiv.append(gifTitle);
                 gifDiv.append(gifRating);
+                // var downloadButtonA = $("<a>");
+                // downloadButtonA.attr("download");
+                // downloadButtonA.attr("href", gifAnimateURL);
+                // downloadButtonA.attr("title", gifSlug);
+                // gifDiv.append(downloadButtonA);
+                // downloadButton = $("<button>");
+                // downloadButton.addClass("btn");
+                // downloadButton.addClass("btn-primary");
+                // downloadButton.attr("type", "button");
+                // downloadButton.attr("value", "download");
+                // downloadButton.html("Download");
+                // downloadButtonA.html(downloadButton);
+                var downloadButton = $("<div>");
+                downloadButton.html("<a href=" + gifStillURL + " download> <button class='btn btn-primary' type='submit'>Download</button> </a>");
+                gifDiv.append(downloadButton);
                 var gifImage = $("<img>");
                 gifImage.attr("src", gifAnimateURL);
                 gifImage.attr("data-still", gifStillURL); // still image
