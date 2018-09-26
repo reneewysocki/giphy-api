@@ -19,7 +19,7 @@
 #buttons {
     margin-top: 10px; 
     background-color: lightgray;
-    background-image: linear-gradient(darkgray, gray, lightgray,); 
+    background-image: linear-gradient(darkgray, gray, lightgray); 
     padding: 60px 10px 10px 10px;
     margin-right: 30px;
     border-radius: 10px;
