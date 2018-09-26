@@ -1,5 +1,6 @@
 body {
     background-color: #333333;
+    font-family: 'Quicksand', sans-serif;
 }
 
 #main-content {
@@ -9,9 +10,13 @@ body {
 }
 
 h1 {
-    color: blue;
+    color: #007bff;
     text-align: center;
     line-height: 75px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+    font-variant: small-caps;
 }
 
 .search-button {

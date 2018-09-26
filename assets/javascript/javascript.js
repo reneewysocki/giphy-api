@@ -61,9 +61,9 @@ $(document).ready(function () {
                 // downloadButton.attr("value", "download");
                 // downloadButton.html("Download");
                 // downloadButtonA.html(downloadButton);
-                var downloadButton = $("<div>");
-                downloadButton.html("<a href=" + gifStillURL + " download> <button class='btn btn-primary' type='submit'>Download</button> </a>");
-                gifDiv.append(downloadButton);
+                // var downloadButton = $("<div>");
+                // downloadButton.html("<a download href=" + gifStillURL + "> <button class='btn btn-primary' type='submit'>Download</button> </a>");
+                // gifDiv.append(downloadButton);
                 var gifImage = $("<img>");
                 gifImage.attr("src", gifAnimateURL);
                 gifImage.attr("data-still", gifStillURL); // still image
