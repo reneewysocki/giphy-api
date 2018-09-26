@@ -66,10 +66,10 @@ $(document).ready(function () {
                 // downloadButton.html("<a download href=" + gifStillURL + "> <button class='btn btn-primary' type='submit'>Download</button> </a>");
                 // gifDiv.append(downloadButton);
                 var gifImage = $("<img>");
-                gifImage.attr("src", gifAnimateURL);
+                gifImage.attr("src", gifStillURL);
                 gifImage.attr("data-still", gifStillURL); // still image
                 gifImage.attr("data-animate", gifAnimateURL); // animated image
-                gifImage.attr("data-state", "animate"); // set the image state
+                gifImage.attr("data-state", "still"); // set the image state
                 gifImage.addClass("image");
                 gifImage.addClass("img-fluid");
                 gifDiv.prepend(gifImage);
@@ -102,14 +102,15 @@ $(document).ready(function () {
         var state = $(this).attr('data-state');
         gifStillURL = $(this).attr("data-animate")
         gifAnimateURL = $(this).attr("data-still")
-        if (state == 'animate') {
-            $(this).attr('src', gifStillURL);
-            $(this).attr('data-state', 'still');
-        }
         if (state == 'still') {
             $(this).attr('src', gifAnimateURL);
             $(this).attr('data-state', 'animate');
         }
+        if (state == 'animate') {
+            $(this).attr('src', gifStillURL);
+            $(this).attr('data-state', 'still');
+        }
+        
 
     });
 

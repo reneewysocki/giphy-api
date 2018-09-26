@@ -42,6 +42,7 @@ h1 {
     padding: 40px;
     font-family: Aero, Georgia, 'Times New Roman', Times, serif;
     font-size: 60px;
+    -webkit-text-stroke: 3px red;
 }
 
 #addGif {
