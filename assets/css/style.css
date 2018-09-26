@@ -1,3 +1,12 @@
+body {
+    background-color: #333333;
+}
+
+#main-content {
+    background-color: white;
+    padding: 20px;
+}
+
 h1 {
     color: blue;
     text-align: center;
@@ -6,3 +15,22 @@ h1 {
 .search-button {
     margin: 10px;
 }
+
+ #user-input {
+    width: 60%;
+} 
+
+
+p {
+    margin-bottom: 2px;
+}
+
+.gifImage {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#gifs {
+    text-align: center;
+}
+

@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
-    var searchOptions = ["the office", "arrested development", "stranger things", "parks and recreation", "30 rock", "archer", "bobs burgers"];
+    var searchOptions = ["The Office", "Arrested Development", "Brooklyn 99", "Parks and Recreation", "30 Rock", "Archer", "Bobs Burgers"];
     var gifRating = "";
     var gifAnimateURL = "";
     var gifStillURL = "";
+   // var gifTitle = "";
 
 
     // renders button from Search Options loop
@@ -13,6 +14,8 @@ $(document).ready(function () {
             var a = $("<button>");
             a.addClass("search-button");
             a.addClass("col");
+            a.addClass("btn");
+            a.addClass("btn-outline-primary");
             a.attr('id', searchOptions[i])
             a.attr("data-name", searchOptions[i]);
             a.text(searchOptions[i]);
@@ -34,17 +37,25 @@ $(document).ready(function () {
             console.log(response);
             $("#gifs").empty();
             for (let j = 0; j < response.data.length; j++) {
-                var gifDiv = $("<div>");
-                var gifImage = $("<img>");
                 gifAnimateURL = response.data[j].images.original.url
                 gifStillURL = response.data[j].images.original_still.url
                 gifRating = response.data[j].rating.toUpperCase()
+                //gifTitle = response.data[j].title
+                var gifDiv = $("<div>");
+                gifDiv.addClass("container");
+                gifDiv.addClass("gifImage");
+                gifRating = $("<p>").text("Rating: " + gifRating);
+                //gifTitle = $("<p>").text("Title: " + gifTitle);
+               // gifDiv.append(gifTitle);
+                gifDiv.append(gifRating);
+                var gifImage = $("<img>");
                 gifImage.attr("src", gifAnimateURL);
                 gifImage.attr("data-still", gifStillURL); // still image
                 gifImage.attr("data-animate", gifAnimateURL); // animated image
                 gifImage.attr("data-state", "animate"); // set the image state
                 gifImage.addClass("image");
-                gifDiv.append(gifImage);
+                gifImage.addClass("img-fluid");
+                gifDiv.prepend(gifImage);
                 $("#gifs").prepend(gifDiv);
             }
         });
