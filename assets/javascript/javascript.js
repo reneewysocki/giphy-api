@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var searchOptions = ["Silly", "Annoyed", "Angry", "Excited", "Shocked", "Proud", "Euphoric"];
+    var searchOptions = ["Candy", "Pretzels", "Trail Mix", "Crackers", "Chips", "Energy Drink", "Soda", "Water"];
     var gifRating = "";
     var gifAnimateURL = "";
     var gifStillURL = "";
