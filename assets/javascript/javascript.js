@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     // renders button from Search Options loop
     function renderButtons() {
-       // $("#buttons").empty();
+        $("#buttons").empty();
         for (var i = 0; i < searchOptions.length; i++) {
             var a = $("<button>");
             a.addClass("search-button");
