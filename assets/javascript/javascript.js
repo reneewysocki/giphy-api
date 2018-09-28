@@ -84,7 +84,7 @@ $(document).ready(function () {
             if (input == "") {
                 return false; // added so user cannot add a blank button
             }
-            searchOptions.push(input);
+            searchOptions.unshift(input);
 
             renderButtons();
             return false;
